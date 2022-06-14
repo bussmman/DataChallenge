@@ -129,3 +129,27 @@ roedeer_12_13$dist = sqrt((roedeer_12_13$x.x - roedeer_12_13$x.y)^2 +
 ggplot(roedeer_12_13, aes(x = datetime_utc, y = dist)) +
   geom_point() +
   theme_classic()
+
+## Filter all datapoints with a eucl. distance < 50m
+# Couple 2 & 7
+close_2_7 = filter(roedeer_2_7, dist < 50)
+
+ggplot(close_2_7, aes(x = datetime_utc, y = dist)) +
+  geom_point() +
+  theme_classic()
+
+# Couple 5 & 6
+close_5_6 = filter(roedeer_5_6, dist < 50)
+
+ggplot(close_5_6, aes(x = datetime_utc, y = dist)) +
+  geom_point() +
+  theme_classic()
+
+# Couple 12 & 13
+close_12_13 = filter(roedeer_12_13, dist < 50)
+
+ggplot(close_12_13, aes(x = datetime_utc, y = dist)) +
+  geom_point() +
+  theme_classic()
+
+# Dense line of points probably due to increased sampling interval!
